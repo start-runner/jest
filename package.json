@@ -1,0 +1,38 @@
+{
+  "name": "start-jest",
+  "version": "0.1.0",
+  "description": "Jest task for Start",
+  "keywords": [
+    "start",
+    "start-task",
+    "jest"
+  ],
+  "homepage": "https://github.com/start-runner/jest",
+  "repository": "start-runner/jest",
+  "author": "Kir Belevich <kir@soulshine.in> (https://github.com/deepsweet)",
+  "files": [
+    "build/"
+  ],
+  "main": "build/index.js",
+  "dependencies": {
+    "jest-cli": "^19.0.2"
+  },
+  "devDependencies": {
+    "babel-preset-start": "^0.1.0",
+    "eslint-config-tough": "^0.4.0",
+    "husky": "^0.13.1",
+    "sinon": "^1.17.5",
+    "start-babel-cli": "^4.0.1",
+    "start-start-preset": "^3.0.0",
+    "tape": "^4.6.0"
+  },
+  "scripts": {
+    "start": "start-runner -p start-start-preset",
+    "prepush": "yarn start prepush",
+    "prepublish": "yarn start build"
+  },
+  "engines": {
+    "node": ">=4"
+  },
+  "license": "MIT"
+}

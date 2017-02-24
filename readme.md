@@ -1,0 +1,60 @@
+# start-jest
+
+[![npm](https://img.shields.io/npm/v/start-jest.svg?style=flat-square)](https://www.npmjs.com/package/start-jest)
+[![linux build](https://img.shields.io/travis/start-runner/jest/master.svg?label=linux&style=flat-square)](https://travis-ci.org/start-runner/jest)
+[![windows build](https://img.shields.io/appveyor/ci/start-runner/jest/master.svg?label=windows&style=flat-square)](https://ci.appveyor.com/project/start-runner/jest)
+[![coverage](https://img.shields.io/codecov/c/github/start-runner/jest/master.svg?style=flat-square)](https://codecov.io/github/start-runner/jest)
+[![deps](https://img.shields.io/gemnasium/start-runner/jest.svg?style=flat-square)](https://gemnasium.com/start-runner/jest)
+
+[Jest](https://facebook.github.io/jest/) task for [Start](https://github.com/start-runner/start).
+
+## Install
+
+```sh
+npm install --save-dev start-jest
+# or
+yarn add --dev start-jest
+```
+
+## Usage
+
+```js
+import start from 'start';
+import reporter from 'start-pretty-reporter';
+import env from 'start-env';
+import jest from 'start-jest';
+
+export const build= () => start(reporter())(
+  env('NODE_ENV', 'test'),
+  jest({
+    config: {
+      moduleNameMapper: {
+        '^~/(.*)$': '<rootDir>/packages/$1'
+      },
+      roots: [
+        '<rootDir>/packages/neoform/'
+      ],
+      testMatch: [
+        '**/tests/*.jsx'
+      ],
+      collectCoverage: true,
+      collectCoverageFrom: [
+        '**/src/*.jsx'
+      ],
+      coverageReporters: [
+        'lcov',
+        'text-summary'
+      ],
+      snapshotSerializers: [
+        'enzyme-to-json/serializer'
+      ]
+    }
+  })
+);
+```
+
+## Arguments
+
+`jest(options)`
+
+* `options` – [Jest options](https://facebook.github.io/jest/docs/configuration.html#content)
