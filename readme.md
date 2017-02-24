@@ -29,34 +29,32 @@ const start = Start(reporter());
 export const test = () => start(
   env('NODE_ENV', 'test'),
   jest({
-    config: {
-      moduleNameMapper: {
-        '^~/(.*)$': '<rootDir>/packages/$1'
-      },
-      roots: [
-        '<rootDir>/packages/neoform/'
-      ],
-      testMatch: [
-        '**/tests/*.jsx'
-      ],
-      collectCoverage: true,
-      collectCoverageFrom: [
-        '**/src/*.jsx'
-      ],
-      coverageReporters: [
-        'lcov',
-        'text-summary'
-      ],
-      snapshotSerializers: [
-        'enzyme-to-json/serializer'
-      ]
-    }
+    moduleNameMapper: {
+      '^~/(.*)$': '<rootDir>/packages/$1'
+    },
+    roots: [
+      '<rootDir>/packages/neoform/'
+    ],
+    testMatch: [
+      '**/tests/*.jsx'
+    ],
+    collectCoverage: true,
+    collectCoverageFrom: [
+      '**/src/*.jsx'
+    ],
+    coverageReporters: [
+      'lcov',
+      'text-summary'
+    ],
+    snapshotSerializers: [
+      'enzyme-to-json/serializer'
+    ]
   })
 );
 ```
 
 ## Arguments
 
-`jest(options)`
+`jest(options: Object | config: string)`
 
-* `options` – [Jest options](https://facebook.github.io/jest/docs/configuration.html#content)
+* `options` – [Jest options](https://facebook.github.io/jest/docs/configuration.html#content) or path to config file like `.jestrc`
