@@ -19,12 +19,14 @@ yarn add --dev start-jest
 ## Usage
 
 ```js
-import start from 'start';
+import Start from 'start';
 import reporter from 'start-pretty-reporter';
 import env from 'start-env';
 import jest from 'start-jest';
 
-export const build= () => start(reporter())(
+const start = Start(reporter());
+
+export const test = () => start(
   env('NODE_ENV', 'test'),
   jest({
     config: {
