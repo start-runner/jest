@@ -55,6 +55,8 @@ export const test = () => start(
 
 ## Arguments
 
-`jest(options: Object | config: string)`
+`jest(options)`
 
-* `options` – [Jest options](https://facebook.github.io/jest/docs/configuration.html#content) or path to config file like `.jestrc`
+* `options` – [Jest CLI options](https://github.com/facebook/jest/blob/8e30070edb3dcdc49fb86e94aaf0006520535295/packages/jest-cli/src/cli/args.js#L49-L279)
+
+:information_desk_person: `{ config: '.jestrc' }`
