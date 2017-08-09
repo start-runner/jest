@@ -15,14 +15,14 @@
   ],
   "main": "build/index.js",
   "dependencies": {
-    "jest-cli": "^19.0.2"
+    "jest-cli": "^20.0.4"
   },
   "devDependencies": {
-    "babel-preset-start": "^0.1.0",
+    "babel-preset-start": "^0.1.1",
     "eslint-config-tough": "^0.4.0",
     "husky": "^0.13.1",
     "sinon": "^1.17.5",
-    "start-babel-cli": "^4.0.1",
+    "start-babel-cli": "^4.0.2",
     "start-start-preset": "^3.0.0",
     "tape": "^4.6.0"
   },
